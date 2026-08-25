@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churros Gourmet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Churros Gourmet</h1>
+        <p>Os melhores churros da cidade!</p>
+    </header>
+
+    <main>
+        <section class="sabores">
+            <h2>Nossos Sabores</h2>
+            <div id="lista-sabores">
+                <!-- Sabores inseridos via JavaScript -->
+            </div>
+        </section>
+
+        <section class="pedido">
+            <h2>Monte seu Pedido</h2>
+            <form id="form-pedido">
+                <!--item7-->
+                <label for="qtd-churros">Quantidade de churros (mínimo 1):</label>
+                <input type="number" id="qtd-churros" value="1" min="1">
+                <span id="msg-validacao"></span>
+
+                <br><br>
+                <button type="button" id="btn-calcular">Calcular e Adicionar</button>
+            </form>
+
+            <div id="resumo-pedido">
+                <h3>Resumo</h3>
+                <p>Status: <span id="status-churros">Passe o mouse no botão para analisar</span></p>
+                <p>Último Sabor Escolhido: <span id="sabor-selecionado">Nenhum</span></p>
+                <p>Valor Total: R$ <span id="valor-total">0.00</span></p>
+            </div>
+        </section>
+
+        <section class="carrinho">
+            <h2>Itens no Carrinho</h2>
+            <ul id="lista-carrinho"></ul>
+            <p><strong>Status da Promoção:</strong> <span id="info-desconto">Aguardando cálculo...</span></p>
+        </section>
+    </main>
+
+    <!--item6-->
+    <footer id="rodape">
+        <button id="btn-hover">Hover me para ver novidades</button>
+        <p id="msg-hover"></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

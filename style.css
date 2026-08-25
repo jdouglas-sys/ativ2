@@ -5,7 +5,9 @@ body {
     margin: 20px;
 }
 
-header, section, footer {
+header,
+section,
+footer {
     margin-bottom: 20px;
     padding: 15px;
     border: 1px solid #d7ccc8;
@@ -22,26 +24,59 @@ button {
     border-radius: 4px;
 }
 
-button:hover {
-    background-color: #6d4c41;
+label,
+input,
+button {
+    display: block;
+    margin-top: 10px;
 }
 
-/*item10*/
-section.sabores > div:first-child {
+input {
+    padding: 7px;
+    border: 1px solid #bcaaa4;
+    border-radius: 4px;
+}
+
+.grade-sabores {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-/*item10*/
-ul#lista-carrinho + p {
-    font-weight: bold;
-    color: #e65100;
-}
-
 .sabor-card {
+    width: 190px;
     border: 1px solid #ffcc80;
     padding: 10px;
     border-radius: 5px;
     background-color: #fff3e0;
+}
+
+.sabor-card.selecionado {
+    border-color: #e65100;
+    box-shadow: 0 0 0 2px #ffcc80;
+}
+
+/*item10*/
+.grade-sabores > .sabor-card:first-child {
+    background-color: #ffe0b2;
+}
+
+/*item10*/
+.carrinho > ul + p:last-child {
+    font-weight: bold;
+    color: #e65100;
+}
+
+#msg-validacao {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+#lista-carrinho li {
+    margin-bottom: 6px;
+}
+
+#msg-hover {
+    min-height: 20px;
+    font-weight: bold;
 }

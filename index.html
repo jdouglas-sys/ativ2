@@ -9,14 +9,42 @@
 <body>
     <header>
         <h1>Churros Gourmet</h1>
-        <p>Os melhores churros da cidade!</p>
+        <p>Home oficial de uma confeitaria especializada em churros artesanais.</p>
     </header>
 
     <main>
         <section class="sabores">
             <h2>Nossos Sabores</h2>
-            <div id="lista-sabores">
-                <!-- Sabores inseridos via JavaScript -->
+            <p>Escolha um sabor para montar seu pedido.</p>
+
+            <div class="grade-sabores" id="lista-sabores">
+                <article class="sabor-card" data-sabor="Chocolate" data-preco="6.00">
+                    <h3>Chocolate</h3>
+                    <p>Recheio cremoso de chocolate.</p>
+                    <strong>R$ 6,00</strong>
+                    <button type="button">Selecionar</button>
+                </article>
+
+                <article class="sabor-card" data-sabor="Doce de leite" data-preco="7.00">
+                    <h3>Doce de leite</h3>
+                    <p>Recheio tradicional com cobertura de canela.</p>
+                    <strong>R$ 7,00</strong>
+                    <button type="button">Selecionar</button>
+                </article>
+
+                <article class="sabor-card" data-sabor="Chocolate branco" data-preco="7.50">
+                    <h3>Chocolate branco</h3>
+                    <p>Massa crocante com recheio suave.</p>
+                    <strong>R$ 7,50</strong>
+                    <button type="button">Selecionar</button>
+                </article>
+
+                <article class="sabor-card" data-sabor="Leite condensado" data-preco="6.50">
+                    <h3>Leite condensado</h3>
+                    <p>Finalização doce e bem cremosa.</p>
+                    <strong>R$ 6,50</strong>
+                    <button type="button">Selecionar</button>
+                </article>
             </div>
         </section>
 
@@ -24,32 +52,34 @@
             <h2>Monte seu Pedido</h2>
             <form id="form-pedido">
                 <!--item7-->
-                <label for="qtd-churros">Quantidade de churros (mínimo 1):</label>
+                <label for="qtd-churros">Quantidade de churros</label>
                 <input type="number" id="qtd-churros" value="1" min="1">
-                <span id="msg-validacao"></span>
+                <span id="msg-validacao">Digite uma quantidade para calcular.</span>
 
-                <br><br>
-                <button type="button" id="btn-calcular">Calcular e Adicionar</button>
+                <label for="percentual-desconto">Desconto para 5 ou mais unidades (%)</label>
+                <input type="number" id="percentual-desconto" value="10" min="0" max="50" data-quantidade-minima="5">
+
+                <button type="button" id="btn-calcular">Calcular e adicionar</button>
             </form>
 
             <div id="resumo-pedido">
-                <h3>Resumo</h3>
-                <p>Status: <span id="status-churros">Passe o mouse no botão para analisar</span></p>
-                <p>Último Sabor Escolhido: <span id="sabor-selecionado">Nenhum</span></p>
-                <p>Valor Total: R$ <span id="valor-total">0.00</span></p>
+                <h2>Resumo</h2>
+                <p>Status: <span id="status-churros">Selecione um sabor e calcule o pedido.</span></p>
+                <p>Sabor escolhido: <span id="sabor-selecionado">Nenhum</span></p>
+                <p>Preco unitario: R$ <span id="preco-selecionado">0.00</span></p>
+                <p>Valor total: R$ <span id="valor-total">0.00</span></p>
             </div>
         </section>
 
         <section class="carrinho">
             <h2>Itens no Carrinho</h2>
             <ul id="lista-carrinho"></ul>
-            <p><strong>Status da Promoção:</strong> <span id="info-desconto">Aguardando cálculo...</span></p>
+            <p><strong>Status da promocao:</strong> <span id="info-desconto">Aguardando calculo...</span></p>
         </section>
     </main>
 
-    <!--item6-->
     <footer id="rodape">
-        <button id="btn-hover">Hover me para ver novidades</button>
+        <button type="button" id="btn-hover">Ver promocao do dia</button>
         <p id="msg-hover"></p>
     </footer>
 

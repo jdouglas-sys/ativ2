@@ -1,47 +1,279 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff8f0;
-    color: #4a2c11;
-    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcf8f3;
+    color: #3e2723;
+    line-height: 1.6;
 }
 
-header, section, footer {
-    margin-bottom: 20px;
+.container {
+    max-width: 1100px;
+    margin: -30px auto 40px auto;
+    padding: 0 20px;
+}
+
+/* Header / Hero */
+.hero {
+    background: linear-gradient(135deg, #d84315, #8d6e63);
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px 80px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Cards & Layout */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border: 1px solid #f0e6df;
+}
+
+.card h2 {
+    color: #d84315;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #ffe0b2;
+    padding-bottom: 8px;
+}
+
+.section-desc {
+    color: #6d4c41;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.grid-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .grid-dupla {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Grid de Sabores */
+/*item10*/
+section.sabores > div:first-child {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.sabor-card {
+    border: 2px solid #ffe0b2;
     padding: 15px;
-    border: 1px solid #d7ccc8;
-    background-color: #ffffff;
-    border-radius: 8px;
+    border-radius: 10px;
+    background-color: #fffde7;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.sabor-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(216, 67, 21, 0.15);
+    border-color: #ffb74d;
+}
+
+.sabor-card h4 {
+    font-size: 1.1rem;
+    color: #4e342e;
+    margin-bottom: 4px;
+}
+
+.preco-unitario {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #d84315;
+    margin-bottom: 10px;
+}
+
+/* Botões */
 button {
     cursor: pointer;
-    padding: 8px 12px;
-    background-color: #8d6e63;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
-button:hover {
+.btn-card {
+    background-color: #ff9800;
+    color: white;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.btn-card:hover {
+    background-color: #f57c00;
+}
+
+.btn-primary {
+    background-color: #d84315;
+    color: white;
+    padding: 12px 20px;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #bf360c;
+}
+
+.btn-toggle {
+    background-color: #efebe9;
+    color: #5d4037;
+    padding: 8px 14px;
+    border: 1px solid #d7ccc8;
+}
+
+.btn-toggle.ativo {
+    background-color: #4caf50;
+    color: white;
+    border-color: #388e3c;
+}
+
+.btn-secondary {
+    background-color: #8d6e63;
+    color: white;
+    padding: 10px 18px;
+}
+
+.btn-secondary:hover {
     background-color: #6d4c41;
 }
 
-/*item10*/
-section.sabores > div:first-child {
+.btn-remover {
+    background-color: #e53935;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.btn-remover:hover {
+    background-color: #c62828;
+}
+
+/* Formulários & Campos */
+.form-group, .form-group-tipo {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.msg-status {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+/* Resumo & Carrinho */
+.resumo-box {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.resumo-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.preco-destaque {
+    font-size: 1.1rem;
+    color: #d84315;
+    margin-top: 5px;
+}
+
+.lista-itens {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.lista-itens li {
+    padding: 10px;
+    background: #fff8e1;
+    border-left: 4px solid #ffb74d;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /*item10*/
 ul#lista-carrinho + p {
     font-weight: bold;
     color: #e65100;
+    font-size: 0.9rem;
+    background-color: #fff3e0;
+    padding: 10px;
+    border-radius: 6px;
 }
 
-.sabor-card {
-    border: 1px solid #ffcc80;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #fff3e0;
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #3e2723;
+    color: #d7ccc8;
+    margin-top: 40px;
+}
+
+.msg-hover {
+    margin-top: 10px;
+    min-height: 24px;
+    font-weight: 600;
+    color: #ffe0b2;
+}
+
+.copy {
+    font-size: 0.8rem;
+    margin-top: 15px;
+    opacity: 0.6;
 }
